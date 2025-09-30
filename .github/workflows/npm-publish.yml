@@ -10,17 +10,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4 #ambil code
+      - uses: actions/setup-node@v4 #setup nodejs, pakai versi 18
         with:
           node-version: 18
           
-      - run: npm install
+      - run: npm install #install npm
       
-      - run: npm test
+      - run: npm test #test npm
 
-      - run: npm start &
+      - run: npm start & #start npm di background karena ada &
 
-      - run: sleep 5
+      - run: sleep 5 #delay 5 detik, kaya tunggu dulu 5 detik
 
-      - run: curl http://localhost:3000
+      - run: curl http://localhost:3000 #ini endepointnya akan muncul pas proses workflow di actions
